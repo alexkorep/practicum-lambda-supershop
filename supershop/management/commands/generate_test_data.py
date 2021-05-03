@@ -10,9 +10,9 @@ from supershop.factories import (
     OrderProductFactory
 )
 
-NUM_PRODUCTS = 10
-NUM_ORDERS = 2
-NUM_ORDER_PRODUCT = 20
+NUM_PRODUCTS = 1000
+NUM_ORDERS = 1000
+NUM_ORDER_PRODUCT = 5000
 MAX_QTY = 32
 
 class Command(BaseCommand):
