@@ -33,15 +33,3 @@ class OrderProduct(models.Model):
     quantity = models.IntegerField(_('количество'), null=False) 
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-
-class Actor(models.Model):
-    name = models.CharField(_('имя актера'), max_length=255)
-    def __str__(self):
-        return self.name
-
-class Movie(models.Model):
-    title = models.CharField(_('название фильма'), max_length=255)
-    actors = models.ManyToManyField('Actor')
-    def __str__(self):
-        return self.title
-

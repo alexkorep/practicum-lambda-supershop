@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Order, OrderProduct, Actor, Movie
+from .models import Product, Order, OrderProduct
 
 @admin.register(Product)
 class OrderAdmin(admin.ModelAdmin):
@@ -26,17 +26,3 @@ class OrderAdmin(admin.ModelAdmin):
     inlines = [
         OrderProductInline
     ] 
-
-
-class ActorProductInline(admin.TabularInline):
-    model = Actor
-    extra = 0
-
-@admin.register(Movie)
-class MovieAdmin(admin.ModelAdmin):
-    filter_horizontal = ('actors',)
-
-@admin.register(Actor)
-class ActorAdmin(admin.ModelAdmin):
-    #filter_horizontal = ('movie_set',)
-    fields = ('name', 'movie_set',)
