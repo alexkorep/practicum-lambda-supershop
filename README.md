@@ -27,3 +27,35 @@ pip install -r requirements/dev.txt
 ```
 ./manage.py generate_test_data
 ```
+
+## Zappa commands
+
+# Deploy
+
+```
+zappa deploy prod
+```
+
+# Collect static to S3
+
+```
+./manage.py collectstatic --settings=config.settings.prod
+```
+
+# Apply migrations
+
+```
+zappa manage dev migrate
+```
+
+# Create superuser
+
+```
+zappa invoke --raw dev "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@yourdomain.com', 'Y0urpassword')"
+```
+
+# Load test
+
+```
+npx loadtest -c 10 https://example.com/dev/admin/
+```

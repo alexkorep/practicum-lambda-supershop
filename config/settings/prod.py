@@ -36,3 +36,20 @@ LOGGING = {
     },
 } 
 
+# TODO Update with production hosts
+ALLOWED_HOSTS = ['q8niji9mmf.execute-api.eu-central-1.amazonaws.com']
+
+########################################################################
+# Static files
+YOUR_S3_BUCKET = "practicum-zappa-static"
+
+STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
+AWS_S3_BUCKET_NAME_STATIC = YOUR_S3_BUCKET
+
+# These next two lines will serve the static files directly 
+# from the s3 bucket
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % YOUR_S3_BUCKET
+STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+
+# custom domain for your static files
+#AWS_S3_PUBLIC_URL_STATIC = "https://static.example.com/"

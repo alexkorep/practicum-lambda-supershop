@@ -1,0 +1,30 @@
+{
+    "dev": {
+        "aws_region": "eu-central-1",
+        "django_settings": "config.settings.prod",
+        "profile_name": "default",
+        "project_name": "practicum-lambd",
+        "runtime": "python3.8",
+        "s3_bucket": "zappa-1uuhzlmfx",
+        "aws_environment_variables": {
+            "DB_HOST": "db-practicum.cyzemmsq4zds.eu-central-1.rds.amazonaws.com",
+            "DB_NAME": "movies_database",
+            "DB_USER": "postgres",
+            "DB_PASSWORD": "!!!replaceme"
+        }
+    },
+    "prod": {
+        "aws_region": "eu-central-1",
+        "django_settings": "config.settings.prod",
+        "profile_name": "default",
+        "project_name": "practicum-lambd",
+        "runtime": "python3.8",
+        "s3_bucket": "zappa-1uuhzlmfx",
+        "aws_environment_variables": {
+            "DB_HOST": "db-practicum.cyzemmsq4zds.eu-central-1.rds.amazonaws.com",
+            "DB_NAME": "movies_database",
+            "DB_USER": "postgres",
+            "DB_PASSWORD": "!!!replaceme"
+        }
+    }
+}
